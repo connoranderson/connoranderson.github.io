@@ -1,0 +1,280 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+	<title>MoneyMap</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+</head>
+<body>
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<h1><a href="index.html">MoneyMap</a></h1>
+			<nav id="nav">
+				<ul>
+					<li class="special">
+						<a href="#menu" class="menuToggle"><span>Menu</span></a>
+						<div id="menu">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="generic.html">Generic</a></li>
+								<li><a href="elements.html">Elements</a></li>
+								<li><a href="#">Sign Up</a></li>
+								<li><a href="#">Log In</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Main -->
+		<article id="main">
+			
+			<header>
+				<h2>Balanced</h2>
+				<p>
+					Factors in your market return, tax brackets, home appreciation, <br /> salary increase, and other parameters.
+				</p>
+			</header>
+			<form name="analyze" action="analyze_balanced.php" id='analyze' onsubmit="return validateForm()" method="post">
+				<section class="wrapper style5">
+
+					<div class="inner">
+
+
+						<center>
+							<header>
+								<font size='6'>
+									<h2>Parameters</h2>
+								</font>
+								<font size='5'>
+									<p>Basic inputs regarding lifestyle and spending style</p>
+								</font>
+							</header>
+						</center>
+
+						
+						<div class="row uniform">
+							<div align="center">
+								<div class="6u$ 12u$(small)">
+									<span style="white-space: nowrap;"> 
+										<input type="checkbox" id="default_values" name="default_values">
+										<label for="default_values"> <h3>Autofill form with national average values </h3></label>
+									</span>
+									<br> 
+								</div>
+							</div>
+						</div>
+
+
+
+						<div class="row uniform">
+							<h3> Current Age</h3>
+							
+							<div class="6u 12u$(xsmall)">
+								<input type="text" name="start" id="start" value="" placeholder="21" required/>
+								
+							</div>
+							
+						</div>
+
+
+
+						<div class="row uniform">
+							<h3> Retirement Age</h3>
+							
+							<div class="6u 12u$(xsmall)">
+								<input type="text" name="retirement" id="retirement" value="" placeholder="65" required/>
+								
+							</div>
+							
+						</div>
+
+
+						<div class="row uniform">
+							<h3> Starting Salary</h3>
+							
+							<div class="6u 12u$(xsmall)">
+								<input type="text" name="salary" id="salary" value="" placeholder="$60,000" required/>
+								
+							</div>
+							
+						</div>
+
+						<div class="row uniform">
+							<h3> Salary Annual Increase (%)</h3>
+
+							<div class="6u 12u$(xsmall)">
+								<span title="Average annual salary increase in US is 2.9%">
+									<input type="text" name="salary_appreciation" id="salary_appreciation" value="" placeholder="2.9%" required/>
+								</span>
+								
+							</div>
+							
+						</div>
+
+						<div class="row uniform">
+
+							<span title="Assumes 3.77% interest rate"><h3> Desired House Cost</h3></span>
+							
+							<div class="6u 12u$(xsmall)">
+								<span title="Mortgage assumed at 3.77% interest rate">
+									<input type="text" name="house_cost" id="house_cost" value="" placeholder="$400,000" />
+								</span>							
+								
+							</div>						
+						</div>
+
+						<div class="row uniform">
+
+							<span title="Case-Schiller Index of existing home appreciation"><h3> Annual Home Appreciation (%)</h3></span>
+							
+							<div class="6u 12u$(xsmall)">
+								<span title="Case-Schiller Index of existing home appreciation">
+									<input type="text" name="house_appreciation" id="house_appreciation" value="" placeholder="3.4%" />
+								</span>	
+								<br>						
+								
+							</div>						
+						</div>
+
+						<div class="6u$ 12u$(small)">
+							<input type="checkbox" id="homeowners_tax" name="homeowners_tax">
+							<label for="homeowners_tax"> <h3>Include homeowners taxes </h3></label>
+							<br> 
+						</div>
+
+						<div id="homeowner_expanded" style="display:none;" >
+							<div class="form-group">
+								<p> Homeowners insurance: 0.3% annual <br>
+									Property tax: 1% annual
+								</p>
+							</div>
+						</div>
+
+						<script type="text/javascript">
+						var checkbox = document.getElementById('homeowners_tax');
+						var delivery_div = document.getElementById('homeowner_expanded');
+						checkbox.onclick = function() {
+							if(this.checked) {
+								delivery_div.style['display'] = 'block';
+							} else {
+								delivery_div.style['display'] = 'none';
+							}
+						};
+
+
+						var checkbox = document.getElementById('default_values');
+						checkbox.onclick = function() {
+							if(this.checked) {
+								document.getElementById("start").value = "21";
+								document.getElementById("retirement").value = "62";
+								document.getElementById("salary").value = "50500";
+								document.getElementById("salary_appreciation").value = "2.9";
+								document.getElementById("house_cost").value = "188900";
+								document.getElementById("house_appreciation").value = "3.4";
+								document.getElementById("homeowners_tax").checked = true;
+								document.getElementById("rent").value = "962";
+								document.getElementById("monthly_spending").value = "2820";
+								document.getElementById("investment").value = "6";
+							} 
+						};
+						</script>
+
+						<div class="row uniform">
+							<h3> Rent Cost Per Month</h3>
+							
+							<div class="6u 12u$(xsmall)">
+								<input type="text" name="rent" id="rent" value="" placeholder="$1,500 / mo" required/>
+								
+							</div>
+						</div>
+
+						<div class="row uniform">
+							<h3> Monthly Spending Level</h3>
+							<div class="6u 12u$(xsmall)">
+								<input type="text" name="monthly_spending" id="monthly_spending" value="" placeholder="$2,000 / mo" required/>
+								
+							</div>
+
+						</div>
+
+
+						<div class="row uniform">
+
+							<h3> Investment Return (%)</h3>
+
+							<div class="6u 12u$(xsmall)">
+								<span title="Enter value as percentage">
+									<input type="text" name="investment" id="investment" value="" placeholder="6%" style='width:100px;' required/>
+								</span>
+							</div>
+
+						</div>
+
+
+						<p></p><br>
+
+						<center>
+							<header>
+								<font size='6'>
+									<h2>Results</h2>
+								</font>
+							</header>
+						</center>
+
+						<center>
+							<div class="12u$">
+								<ul class="actions">
+									<li><input type="submit" value="Analyze Results" class="special" /></li>
+								</ul>
+							</div>
+						</center>
+
+
+					</div>
+
+
+				</section>
+			</form>
+
+		</article>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<ul class="icons">
+				<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+				<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Connor Anderson</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/validate_input.js"></script>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/toggleCheckbox.js"></script>
+
+</body>
+</html>

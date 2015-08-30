@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+	<title>MoneyMap</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+</head>
+<body>
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<h1><a href="index.html">MoneyMap</a></h1>
+			<nav id="nav">
+				<ul>
+					<li class="special">
+						<a href="#menu" class="menuToggle"><span>Menu</span></a>
+						<div id="menu">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="generic.html">Generic</a></li>
+								<li><a href="elements.html">Elements</a></li>
+								<li><a href="#">Sign Up</a></li>
+								<li><a href="#">Log In</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Main -->
+		<article id="main">
+			
+				<header>
+					<h2>Quick</h2>
+					<p>
+						Just the basics - salary, home purchase, and savings contribution style.
+					</p>
+				</header>
+				<form name="analyze" action="analyze_quick.php" id='analyze' onsubmit="return validateForm()" method="post">
+				<section class="wrapper style5">
+
+					<div class="inner">
+
+
+						<center>
+							<header>
+								<font size='6'>
+									<h2>Parameters</h2>
+								</font>
+								<font size='5'>
+									<p>Basic inputs regarding lifestyle and spending style</p>
+								</font>
+							</header>
+						</center>
+
+						<div class="row uniform">
+							<h3> Current Age</h3>
+							
+								<div class="6u 12u$(xsmall)">
+									<input type="text" name="start" id="start" value="" placeholder="21" required/>
+								
+							</div>
+							
+						</div>
+
+
+
+						<div class="row uniform">
+							<h3> Retirement Age</h3>
+							
+								<div class="6u 12u$(xsmall)">
+									<input type="text" name="retirement" id="retirement" value="" placeholder="65" required/>
+								
+							</div>
+							
+						</div>
+
+
+						<div class="row uniform">
+							<h3> Starting Salary</h3>
+							
+								<div class="6u 12u$(xsmall)">
+									<input type="text" name="salary" id="salary" value="" placeholder="$60,000" required/>
+								
+							</div>
+							
+						</div>
+
+						<div class="row uniform">
+
+							<span title="Assumes 3.77% interest rate"><h3> Desired House Cost</h3></span>
+							
+								<div class="6u 12u$(xsmall)">
+									<span title="Mortgage assumed at 3.77% interest rate">
+									<input type="text" name="house_cost" id="house_cost" value="" placeholder="$400,000" />
+								</span>							
+								
+							</div>						
+						</div>
+
+						<div class="row uniform">
+							<h3> Rent Cost Per Month</h3>
+							
+								<div class="6u 12u$(xsmall)">
+									<input type="text" name="rent" id="rent" value="" placeholder="$1,500 / mo" required/>
+								
+							</div>
+						</div>
+
+						<div class="row uniform">
+							<h3> Monthly Spending Level</h3>
+							<div class="6u 12u$(xsmall)">
+									<input type="text" name="monthly_spending" id="monthly_spending" value="" placeholder="$2,000 / mo" required/>
+								
+							</div>
+							<p> <h1> <br></p><br>
+						</div>
+
+						<section>
+							<h3> Investment Strategy</h3>
+							<center>
+								<div class="row uniform">
+									<div class="4u 12u$(large)">
+										<input type="radio" id="investment-agg" name="investment" value='agg' checked>
+										<label for="investment-agg">Aggressive (10% yearly growth)</label>
+									</div>
+									<div class="4u 12u$(large)">
+										<input type="radio" id="investment-bal" name="investment" value='bal'>
+										<label for="investment-bal">Market Average (6% yearly growth)</label>
+									</div>
+									<div class="4u$ 12u$(large)">
+										<input type="radio" id="investment-low" name="investment" value='low'>
+										<label for="investment-low">Playing it Safe (2% yearly growth)</label>
+									</div>
+								</div>
+							</center>
+						</section>
+
+						<p></p><br>
+
+						<center>
+							<header>
+								<font size='6'>
+									<h2>Results</h2>
+								</font>
+							</header>
+						</center>
+
+						<center>
+							<div class="12u$">
+								<ul class="actions">
+									<li><input type="submit" value="Analyze Results" class="special" /></li>
+								</ul>
+							</div>
+						</center>
+
+
+					</div>
+
+
+				</section>
+			</form>
+
+		</article>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<ul class="icons">
+				<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+				<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Connor Anderson</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/validate_input.js"></script>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main.js"></script>
+
+</body>
+</html>
